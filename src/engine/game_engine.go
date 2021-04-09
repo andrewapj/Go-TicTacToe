@@ -9,7 +9,7 @@ import (
 //Play - Main game loop that plays the game
 func Play(g *grid.Grid) {
 
-	currentTurn := playerTurn("")
+	currentTurn := swapPlayerTurn("")
 	totalTurns := 0
 
 	fmt.Println("Welcome to Tic Tac Toe")
@@ -49,14 +49,13 @@ func Play(g *grid.Grid) {
 			break
 		}
 
-		currentTurn = playerTurn(currentTurn)
+		currentTurn = swapPlayerTurn(currentTurn)
 	}
 }
 
-func playerTurn(player string) string {
+func swapPlayerTurn(player string) string {
 	if player == "" || player == grid.SquareO {
 		return grid.SquareX
-	} else {
-		return grid.SquareO
 	}
+	return grid.SquareO
 }
