@@ -2,6 +2,7 @@ package engine
 
 import "github.com/andrewapj/go-tictactoe/src/grid"
 
+//CheckWin - Checks if a player has won the game
 func CheckWin(g *grid.Grid) bool {
 	return checkHorizontal(g) || checkVertical(g) || checkDiagonal(g)
 }

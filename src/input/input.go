@@ -9,6 +9,7 @@ import (
 
 var scanner = bufio.NewScanner(os.Stdin)
 
+//GetInput - Gets input from the user, for square selection
 func GetInput() (uint8, error) {
 	scanner.Scan()
 	input := scanner.Text()
@@ -28,10 +29,12 @@ func checkInput(s string) (uint8, error) {
 	return uint8(val), err
 }
 
+//CalculateMarkerNumber - Calculates the number on the grid, which allows the user to make their selection
 func CalculateMarkerNumber(x uint8, y uint8) uint8 {
 	return (y * 3) + (x + 1)
 }
 
+//CalculateIndexNumber - Calculates the index in the grid from the marker number selected by the user
 func CalculateIndexNumber(i uint8) (x uint8, y uint8) {
 
 	if i >= 1 && i <= 3 {

@@ -6,6 +6,7 @@ import (
 	"github.com/andrewapj/go-tictactoe/src/input"
 )
 
+//Play - Main game loop that plays the game
 func Play(g *grid.Grid) {
 
 	currentTurn := playerTurn("")

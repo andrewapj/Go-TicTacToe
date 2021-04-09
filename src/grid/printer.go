@@ -5,6 +5,7 @@ import (
 	"github.com/andrewapj/go-tictactoe/src/input"
 )
 
+//PrintGrid - Prints the grid to the screen
 func PrintGrid(g *Grid) {
 
 	for y := uint8(0); y < Size; y++ {
