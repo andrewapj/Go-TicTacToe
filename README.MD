@@ -10,6 +10,5 @@ A Tic Tac Toe game written in Go
 ## Running
 
 ```
-cd src
 go run src/main.go
 ```
