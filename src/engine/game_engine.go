@@ -31,25 +31,25 @@ func Play(g *grid.Grid) {
 			fmt.Println("Invalid square selection")
 		} else {
 			totalTurns++
+
+			grid.PrintGrid(g)
+
+			if CheckWin(g) {
+				fmt.Println()
+				fmt.Printf("Player %s wins!", currentTurn)
+				fmt.Println()
+				break
+			}
+
+			if totalTurns == 9 {
+				fmt.Println()
+				fmt.Print("It's a draw!")
+				fmt.Println()
+				break
+			}
+
+			currentTurn = swapPlayerTurn(currentTurn)
 		}
-
-		grid.PrintGrid(g)
-
-		if CheckWin(g) {
-			fmt.Println()
-			fmt.Printf("Player %s wins!", currentTurn)
-			fmt.Println()
-			break
-		}
-
-		if totalTurns == 9 {
-			fmt.Println()
-			fmt.Print("It's a draw!")
-			fmt.Println()
-			break
-		}
-
-		currentTurn = swapPlayerTurn(currentTurn)
 	}
 }
 
